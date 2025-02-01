@@ -1,22 +1,22 @@
 package model;
 
-public class Student {
+public class Client {
 
     private String email;
-    private  String phone;
+    private  String password;
 
-    public Student(){}
-    public Student(String phone, String email) {
-        this.phone = phone;
+    public Client(){}
+    public Client(String phone, String email) {
+        this.password = phone;
         this.email = email;
     }
 
     public String getPhone() {
-        return phone;
+        return password;
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        this.password = password;
     }
 
     public String getEmail() {

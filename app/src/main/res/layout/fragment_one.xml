@@ -1,64 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".fragments.FragmentOne">
+    android:padding="24dp">
 
-    <!-- תמונה בחלק העליון -->
+    <!-- תמונת הכלב -->
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_marginTop="32dp"
-        android:src="@drawable/dog" />
+        android:src="@drawable/dog"
+        android:contentDescription="Logo"/>
 
     <!-- מרווח גמיש -->
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"/>
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Email"
-        android:padding="16dp"
-        android:layout_marginTop="8dp"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter password"
-        android:padding="16dp"
-        android:layout_marginTop="8dp"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/button1ToFrag3"
-        android:padding="16dp"
-        android:layout_marginBottom="8dp"
+    <!-- שדה אימייל -->
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="#000000"
-        android:text="log" />
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="אימייל"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- שדה סיסמא -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:endIconMode="password_toggle"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="סיסמא"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- כפתור התחברות -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button1ToFrag3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:padding="12dp"
+        android:text="התחברות"
+        app:cornerRadius="8dp"/>
+
+    <!-- כפתור הרשמה -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button1ToFrag2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="32dp"
-        android:textColor="#000000"
-        android:text="reg" />
+        android:padding="12dp"
+        android:text="הרשמה"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:cornerRadius="8dp"/>
 
 </LinearLayout>
